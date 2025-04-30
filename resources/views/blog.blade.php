@@ -5,7 +5,7 @@
 
 @section('content')
     <h2 class="text text-center py-2">บทความทั้งหมด</h2>
-    <table class="table table-bordered text-center table-dark">
+    <table class="table table-bordered text-center ">
         <thead>
             <tr>
                 <th scope="col">Blog</th>
@@ -27,7 +27,8 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('delete', $item->id) }}" class="btn btn-danger" onclick="return confirm('Confirm to Delete {{$item->title}} Content ?')">
+                        <a href="{{ route('delete', $item->id) }}" class="btn btn-danger"
+                            onclick="return confirm('Confirm to Delete {{ $item->title }} Content ?')">
                             Delete
                         </a>
                     </td>

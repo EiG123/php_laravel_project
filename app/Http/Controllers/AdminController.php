@@ -36,7 +36,13 @@ class AdminController extends Controller
                 'content.required'=>'กรุณาป้อนเนื้อหาบทความของคุณ'
             ]
     
-    );
+        );
+        $data=[
+            'title' => $request->title,
+            'content' => $request->content
+        ];
+        DB::table('blogs')->insert($data);
+        return redirect('/blog');
     }
     function delete($id){
         DB::table('blogs')->where('id', $id)->delete();
