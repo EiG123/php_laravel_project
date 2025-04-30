@@ -11,6 +11,10 @@ Route::get('/blog',[AdminController::class,'index'])->name('blog');
 
 Route::get('/about',[AdminController::class, 'about'])->name('about');
 
+Route::get('/create', [AdminController::class, 'create']);
+
+Route::post('/insert', [AdminController::class, 'insert']);
+
 Route::fallback(function(){
     return "<h1>ไม่พบหน้าเว็บ</h1> <br> <a href='/'>back<a>";
 });

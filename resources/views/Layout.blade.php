@@ -27,7 +27,7 @@
                         <a class="nav-link" href="{{route('blog')}}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">เขียนบทความ</a>
+                        <a class="nav-link" href="/create">Create Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('about')}}">About</a>
