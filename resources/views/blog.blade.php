@@ -10,20 +10,26 @@
             <tr>
                 <th scope="col">Blog</th>
                 <th scope="col">Content</th>
-                <th scope="col">Status</th> 
+                <th scope="col">Status</th>
+                <th scope="col">Delete Content</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($blogs as $item)
                 <tr>
-                    <td>{{ $item['title'] }}</td>
-                    <td>{{ $item['content'] }}</td>
+                    <td>{{ $item->title }}</td>
+                    <td>{{ Str::limit($item->content, 10) }}</td>
                     <td>
-                        @if ($item['status'] == true)
+                        @if ($item->status == true)
                             <a href="#" class="btn btn-success">Publish</a>
                         @else
                             <a href="#" class="btn btn-warning">Private</a>
                         @endif
+                    </td>
+                    <td>
+                        <a href="{{ route('delete', $item->id) }}" class="btn btn-danger" onclick="return confirm('Confirm to Delete {{$item->title}} Content ?')">
+                            Delete
+                        </a>
                     </td>
                 </tr>
             @endforeach

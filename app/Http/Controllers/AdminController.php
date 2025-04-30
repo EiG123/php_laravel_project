@@ -3,27 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     function index(){
-        $blogs = [
-            [
-                'title' => 'บทความที่ 1',
-                'content' => 'เนื้อหาบทความที่ 1',
-                'status' => true
-            ],
-            [
-                'title' => 'บทความที่ 2',
-                'content' => 'เนื้อหาบทความที่ 2',
-                'status' => false
-            ],
-            [
-                'title' => 'บทความที่ 3',
-                'content' => 'เนื้อหาบทความที่ 3',
-                'status' => true
-            ]
-        ];
+        $blogs = DB::table('blogs')->get();
         return view('blog', compact('blogs'));
     }
 
@@ -52,5 +37,9 @@ class AdminController extends Controller
             ]
     
     );
+    }
+    function delete($id){
+        DB::table('blogs')->where('id', $id)->delete();
+        return redirect('/blog');
     }
 }
