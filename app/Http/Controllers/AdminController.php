@@ -48,4 +48,13 @@ class AdminController extends Controller
         DB::table('blogs')->where('id', $id)->delete();
         return redirect('/blog');
     }
+
+    function change($id){
+        $blog = DB::table('blogs')->where('id', $id)->first();
+        $data=[
+            'status' => !$blog->status
+        ];
+        DB::table('blogs')->where('id', $id)->update($data);
+        return redirect('/blog');
+    }
 }

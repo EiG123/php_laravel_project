@@ -21,9 +21,9 @@
                     <td>{{ Str::limit($item->content, 10) }}</td>
                     <td>
                         @if ($item->status == true)
-                            <a href="#" class="btn btn-success">Publish</a>
+                            <a href="{{ route('change', $item->id) }}" class="btn btn-success">Publish</a>
                         @else
-                            <a href="#" class="btn btn-warning">Private</a>
+                            <a href="{{ route('change', $item->id) }}" class="btn btn-warning">Private</a>
                         @endif
                     </td>
                     <td>

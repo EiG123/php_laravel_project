@@ -17,6 +17,8 @@ Route::post('/insert', [AdminController::class, 'insert']);
 
 Route::get('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
 
+Route::get('/change/{id}', [AdminController::class, 'change'])->name('change');
+
 Route::fallback(function(){
     return "<h1>ไม่พบหน้าเว็บ</h1> <br> <a href='/'>back<a>";
 });
