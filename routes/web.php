@@ -26,3 +26,7 @@ Route::post('/update/{id}', [AdminController::class, 'update'])->name('update');
 Route::fallback(function(){
     return "<h1>ไม่พบหน้าเว็บ</h1> <br> <a href='/'>back<a>";
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

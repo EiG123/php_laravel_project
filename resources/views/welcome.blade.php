@@ -1,8 +1,8 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title')
-    About
+    Welcome
 @endsection
 @section('content')
-    <h1>Welcome to My Laravel Project</h1>
-    <p>ยินดีต้อนรับทุกท่านสู่ My Larevel Project</p>
+    <h1 class="text text-center">Welcome to My Laravel Project</h1>
+    <p class="text text-center">ยินดีต้อนรับทุกท่านสู่ My Larevel Project</p>
 @endsection
