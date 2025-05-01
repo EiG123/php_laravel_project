@@ -16,11 +16,11 @@
 
                         {{ __('You are logged in!') }}
                         <br>
-                        <a href="/blog">Blog</a>
+                        <a href="/author/blog">Blog</a>
                         <br>
-                        <a href="/create">Create Blog</a>
+                        <a href="/author/create">Create Blog</a>
                         <br>
-                        <a href="/about">About</a>
+                        <a href="/author/about">About</a>
                     </div>
                 </div>
             </div>
